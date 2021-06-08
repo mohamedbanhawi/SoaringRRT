@@ -1215,7 +1215,10 @@ nmax = 50000
 xg=0
 yg=0
 zg=80
-epsilon=5
+xg=300
+yg=100
+zg=20
+epsilon=30
 xgmin=xg-epsilon
 xgmax=xg+epsilon
 ygmin=yg-epsilon
@@ -1227,7 +1230,7 @@ zgmax=zg+epsilon
 # dmax =1
 #start the root of the tree
 nstart =(0,0,43) 
-
+nstart =(-100,-100,43) 
 #create an RRT tree with a start node
 G=RRT3d(nstart)
 
@@ -1276,8 +1279,8 @@ def draw ():
 ##	stats
     G.plotStats('b','r','g','c')
     
-    plt.show()
-
+    # plt.show()
+    plt.savefig(time.time()+'.csv', dpi=300)
 #--------------------------------------RRT Implementation---------------------------------
 def main():
     #balance between extending and biasing	
